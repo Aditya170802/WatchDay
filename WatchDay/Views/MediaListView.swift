@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct MediaListView: View {
+    let items: [MediaItem]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            LazyVStack(spacing: 16) {
+                ForEach(items) { item in
+                    NavigationLink(destination: MediaDetailView(mediaId: item.id)) {
+                        MediaRowView(item: item)
+                    }
+                }
+            }
+            .padding()
+        }
     }
 }
 
-#Preview {
-    MediaListView()
-}
+

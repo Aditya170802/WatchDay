@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct MediaItem: Identifiable, Decodable {
+    let id: Int
+    let title: String
+    let type: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id, title, type
+    }
+}

@@ -9,7 +9,13 @@ import SwiftUI
 
 struct LoadingView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 12) {
+            ForEach(0..<6) { _ in
+                LoadingRowView()
+            }
+            .padding(.horizontal)
+        }
+        .padding(.vertical)
     }
 }
 

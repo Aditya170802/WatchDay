@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct MediaResponse: Decodable {
+    let titles: [MediaItem]
+}
